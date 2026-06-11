@@ -2,6 +2,7 @@
 
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import AnimatedSection from "@/components/ui/AnimatedSection";
+import TiltCard from "@/components/ui/TiltCard";
 import { SERVICES } from "@/data/content";
 
 export default function Services() {
@@ -23,25 +24,27 @@ export default function Services() {
       <div className="grid md:grid-cols-3 gap-0.5">
         {SERVICES.map((service, i) => (
           <AnimatedSection key={i} delay={0.1 * (i + 1)}>
-            <div className="group border border-[#F5F0E8]/10 hover:border-[#C9A84C]/40 p-8 h-full transition-all duration-300 hover:bg-[#132238]">
-              <div className="text-[#C9A84C] text-3xl mb-6">{service.icon}</div>
-              <h3 className="font-[family-name:var(--font-display)] text-[#F5F0E8] text-xl font-semibold mb-4">
-                {service.title}
-              </h3>
-              <p className="text-[#F5F0E8]/60 text-sm leading-relaxed mb-6">
-                {service.description}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {service.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-xs px-2.5 py-1 border border-[#C9A84C]/30 text-[#C9A84C]/70 tracking-wide"
-                  >
-                    {tag}
-                  </span>
-                ))}
+            <TiltCard className="h-full">
+              <div className="border border-[#F5F0E8]/10 hover:border-[#C9A84C]/40 p-8 h-full transition-colors duration-300 hover:bg-[#132238] cursor-default">
+                <div className="text-[#C9A84C] text-3xl mb-6">{service.icon}</div>
+                <h3 className="font-[family-name:var(--font-display)] text-[#F5F0E8] text-xl font-semibold mb-4">
+                  {service.title}
+                </h3>
+                <p className="text-[#F5F0E8]/60 text-sm leading-relaxed mb-6">
+                  {service.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {service.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="text-xs px-2.5 py-1 border border-[#C9A84C]/30 text-[#C9A84C]/70 tracking-wide"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </TiltCard>
           </AnimatedSection>
         ))}
       </div>

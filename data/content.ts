@@ -11,7 +11,7 @@ export const HERO = {
   subheadline:
     "Consultant specializing in strategy, digital transformation, and innovation — helping organizations cut through complexity to solve the right problems.",
   cta: "Let's work together",
-  photo: "/bianca-cropped.jpeg",
+  photo: "/bianca-headshot.png",
 };
 
 export const ABOUT = {
