@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { ABOUT } from "@/data/content";
@@ -18,11 +19,26 @@ export default function About() {
             <h2 className="font-[family-name:var(--font-display)] text-[#0A1628] text-4xl md:text-5xl font-semibold leading-tight mb-10">
               {ABOUT.heading}
             </h2>
-            <blockquote className="border-l-2 border-[#C9A84C] pl-5">
+            <blockquote className="border-l-2 border-[#C9A84C] pl-5 mb-10">
               <p className="text-[#0A1628]/60 text-sm leading-relaxed italic">
                 &ldquo;{ABOUT.philosophy}&rdquo;
               </p>
             </blockquote>
+
+            {/* Photo */}
+            <AnimatedSection delay={0.2}>
+              <div className="relative w-full aspect-[4/5] overflow-hidden">
+                <div className="absolute -bottom-2 -right-2 w-full h-full border border-[#C9A84C]/30 z-0" />
+                <div className="relative w-full h-full z-10">
+                  <Image
+                    src="/team-esade.jpeg"
+                    alt="Bianca Chanda with colleagues"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+            </AnimatedSection>
           </AnimatedSection>
         </div>
 

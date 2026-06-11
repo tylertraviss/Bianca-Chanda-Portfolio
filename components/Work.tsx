@@ -1,9 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import { WORK } from "@/data/content";
+
+const WORK_PHOTOS: Record<string, string> = {
+  "MORNINGS": "/team-mornings.jpeg",
+};
 
 export default function Work() {
   const [expanded, setExpanded] = useState<number | null>(0);
@@ -60,6 +65,17 @@ export default function Work() {
                   <p className="text-[#0A1628] font-[family-name:var(--font-display)] text-lg italic mt-6 mb-6 leading-snug">
                     &ldquo;{item.headline}&rdquo;
                   </p>
+
+                  {WORK_PHOTOS[item.company] && (
+                    <div className="relative w-full h-56 md:h-72 mb-8 overflow-hidden">
+                      <Image
+                        src={WORK_PHOTOS[item.company]}
+                        alt={`${item.company} team`}
+                        fill
+                        className="object-cover object-center"
+                      />
+                    </div>
+                  )}
 
                   <div className="grid md:grid-cols-2 gap-8 mb-6">
                     <div>

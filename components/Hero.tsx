@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { HERO, CONTACT } from "@/data/content";
 
@@ -22,87 +21,69 @@ export default function Hero() {
       <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[#C9A84C]/40 to-transparent" />
 
       <div className="max-w-5xl mx-auto px-6 w-full py-32">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Text */}
-          <div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex items-center gap-3 mb-8"
-            >
-              <div className="w-8 h-px bg-[#C9A84C]" />
-              <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase">
-                Strategy · Innovation · Digital
-              </span>
-            </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="flex items-center gap-3 mb-8"
+        >
+          <div className="w-8 h-px bg-[#C9A84C]" />
+          <span className="text-[#C9A84C] text-xs tracking-[0.3em] uppercase">
+            Strategy · Innovation · Digital
+          </span>
+        </motion.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.2 }}
-              className="font-[family-name:var(--font-display)] text-[#F5F0E8] text-5xl md:text-6xl lg:text-7xl font-semibold leading-[1.1] mb-6"
-            >
-              {taglineLines.map((line, i) => (
-                <span key={i} className={i === 1 ? "text-[#C9A84C]" : ""}>
-                  {line}
-                  {i < taglineLines.length - 1 && <br />}
-                </span>
-              ))}
-            </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="text-[#F5F0E8]/50 text-sm tracking-[0.2em] uppercase mb-4"
+        >
+          Bianca Chanda
+        </motion.p>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.35 }}
-              className="text-[#F5F0E8]/70 text-lg leading-relaxed mb-10 max-w-md"
-            >
-              {HERO.subheadline}
-            </motion.p>
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+          className="font-[family-name:var(--font-display)] text-[#F5F0E8] text-5xl md:text-6xl lg:text-8xl font-semibold leading-[1.05] mb-8 max-w-4xl"
+        >
+          {taglineLines.map((line, i) => (
+            <span key={i} className={i === 1 ? "text-[#C9A84C]" : ""}>
+              {line}
+              {i < taglineLines.length - 1 && <br />}
+            </span>
+          ))}
+        </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex flex-wrap gap-4"
-            >
-              <a
-                href={`mailto:${CONTACT.email}`}
-                className="px-8 py-3.5 bg-[#C9A84C] text-[#0A1628] text-sm tracking-widest uppercase font-semibold hover:bg-[#D4B96A] transition-colors duration-200"
-              >
-                {HERO.cta}
-              </a>
-              <a
-                href="#work"
-                className="px-8 py-3.5 border border-[#F5F0E8]/30 text-[#F5F0E8]/80 text-sm tracking-widest uppercase hover:border-[#F5F0E8]/60 hover:text-[#F5F0E8] transition-all duration-200"
-              >
-                View Work
-              </a>
-            </motion.div>
-          </div>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.35 }}
+          className="text-[#F5F0E8]/60 text-lg leading-relaxed mb-12 max-w-xl"
+        >
+          {HERO.subheadline}
+        </motion.p>
 
-          {/* Photo */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative flex justify-center md:justify-end"
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
+          className="flex flex-wrap gap-4"
+        >
+          <a
+            href={`mailto:${CONTACT.email}`}
+            className="px-8 py-3.5 bg-[#C9A84C] text-[#0A1628] text-sm tracking-widest uppercase font-semibold hover:bg-[#D4B96A] transition-colors duration-200"
           >
-            <div className="relative w-72 h-96 md:w-80 md:h-[440px]">
-              {/* Gold border offset */}
-              <div className="absolute -top-3 -right-3 w-full h-full border border-[#C9A84C]/40" />
-              <div className="relative w-full h-full overflow-hidden">
-                <Image
-                  src={HERO.photo}
-                  alt="Bianca Chanda — Strategy & Digital Transformation Consultant"
-                  fill
-                  className="object-cover object-top"
-                  priority
-                />
-              </div>
-            </div>
-          </motion.div>
-        </div>
+            {HERO.cta}
+          </a>
+          <a
+            href="#work"
+            className="px-8 py-3.5 border border-[#F5F0E8]/30 text-[#F5F0E8]/80 text-sm tracking-widest uppercase hover:border-[#F5F0E8]/60 hover:text-[#F5F0E8] transition-all duration-200"
+          >
+            View Work
+          </a>
+        </motion.div>
 
         {/* Scroll indicator */}
         <motion.div
