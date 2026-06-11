@@ -54,6 +54,7 @@ export const WORK = [
     sector: "B2B Manufacturing",
     role: "Digital Transformation Strategist",
     period: "2024 – Present",
+    what: "Slowed down a rushed software decision. Led discovery, interviewed teams, and gave leadership a clear roadmap — before a single vendor was selected.",
     headline: "Leading discovery for a sales automation initiative at a B2B manufacturer.",
     context:
       "Technology was being treated as the answer before the problem was fully defined. I was brought in to step back, challenge assumptions, and ensure the organization was solving the right problem before committing to a software implementation.",
@@ -73,6 +74,7 @@ export const WORK = [
     sector: "CPG / Health & Wellness",
     role: "Junior Digital Marketing Consultant",
     period: "2021 – 2022",
+    what: "Led a team of 6 through a full digital audit — SEO, social, omnichannel — and delivered a 100+ page strategy to reposition a growing CPG brand.",
     headline: "Full digital and omnichannel audit for a health and wellness CPG brand.",
     context:
       "A capstone consulting engagement to assess and reposition a growing CPG brand's digital presence, SEO strategy, and omnichannel approach.",
@@ -91,6 +93,7 @@ export const WORK = [
     sector: "Media / Advertising",
     role: "Strategist — Winning Team",
     period: "April 2024",
+    what: "Won a national media brief competition against 3 teams and 9 judges — by putting DEI specificity and audience context front and centre.",
     headline: "First-place media brief at a national BIPOC advertising and marketing competition.",
     context:
       "Competed against 3 teams in front of 9 judges and 150+ attendees. The challenge: develop a DEI-forward media brief that was specific, practical, and genuinely innovative.",

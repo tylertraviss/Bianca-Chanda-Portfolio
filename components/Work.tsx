@@ -149,38 +149,34 @@ export default function Work() {
             <AnimatedSection key={i} delay={0.08 * i}>
               <button
                 onClick={() => setSelected(item)}
-                className="group w-full text-left border border-[#0A1628]/10 hover:border-[#C9A84C]/60 p-8 transition-all duration-300 hover:bg-[#0A1628]/[0.02] relative overflow-hidden"
+                className="group w-full text-left border border-[#0A1628]/10 hover:border-[#C9A84C]/60 p-8 transition-all duration-300 bg-[#F5F0E8] hover:bg-[#0A1628] relative overflow-hidden"
               >
-                {/* Hover fill */}
-                <motion.div
-                  className="absolute inset-0 bg-[#0A1628] origin-bottom"
-                  initial={{ scaleY: 0 }}
-                  whileHover={{ scaleY: 1 }}
-                  transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-                />
 
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="font-[family-name:var(--font-display)] text-[#C9A84C]/40 group-hover:text-[#C9A84C]/60 text-4xl font-semibold transition-colors">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                  </div>
-                  <div className="mb-1">
-                    <span className="text-[#C9A84C] text-xs tracking-[0.2em] uppercase group-hover:text-[#C9A84C] transition-colors">
+                <div className="relative z-10 flex flex-col h-full">
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[#C9A84C] text-xs tracking-[0.2em] uppercase font-medium">
                       {item.sector}
                     </span>
+                    <span className="text-[#0A1628]/30 group-hover:text-[#F5F0E8]/30 text-xs transition-colors">
+                      {item.period}
+                    </span>
                   </div>
-                  <h3 className="font-[family-name:var(--font-display)] text-[#0A1628] group-hover:text-[#F5F0E8] text-xl font-semibold mb-2 transition-colors">
+
+                  <h3 className="font-[family-name:var(--font-display)] text-[#0A1628] group-hover:text-[#F5F0E8] text-2xl font-semibold mb-1 transition-colors leading-tight">
                     {item.company}
                   </h3>
-                  <p className="text-[#2D3142]/50 group-hover:text-[#F5F0E8]/50 text-xs mb-6 transition-colors">
-                    {item.role} · {item.period}
+                  <p className="text-[#C9A84C]/70 text-xs tracking-wide mb-5">
+                    {item.role}
                   </p>
-                  <p className="text-[#2D3142]/70 group-hover:text-[#F5F0E8]/70 text-sm leading-relaxed line-clamp-3 transition-colors">
-                    {item.headline}
+
+                  <div className="w-8 h-px bg-[#C9A84C]/40 mb-5" />
+
+                  <p className="text-[#2D3142]/80 group-hover:text-[#F5F0E8]/80 text-sm leading-relaxed flex-1 transition-colors">
+                    {item.what}
                   </p>
-                  <div className="mt-6 flex items-center gap-2 text-[#C9A84C] text-xs tracking-widest uppercase font-semibold">
-                    <span>Open case study</span>
+
+                  <div className="mt-8 flex items-center gap-2 text-[#C9A84C] text-xs tracking-widest uppercase font-semibold">
+                    <span>Full case study</span>
                     <motion.span
                       className="inline-block"
                       animate={{ x: [0, 4, 0] }}
